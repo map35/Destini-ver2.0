@@ -25,6 +25,8 @@ class ViewController: UIViewController {
     @IBAction func buttonPressed(_ sender: UIButton) {
         story.nextStory(userChoice: sender.currentTitle!)
         
+        story.choicePicked = sender.tag
+        
         updateUI()
     }
     
@@ -33,6 +35,5 @@ class ViewController: UIViewController {
         choice1Button.setTitle(story.getChoice()[0], for: .normal)
         choice2Button.setTitle(story.getChoice()[1], for: .normal)
     }
-    
 }
 
